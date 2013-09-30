@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="action_bar_background">#ffffff</color>
+    <color name="light_blue">#2f7ecb</color>
+    <color name="dark_blue">#274d71</color>
+    <color name="lite_gray">#e0e5eb</color>
+    <color name="red_start">#e16364</color>
+    <color name="red_end">#d00000</color>
+    <color name="light_blue_start">#0093e7</color>
+    <color name="light_blue_end">#0ab5f4</color>
+    <color name="dark_blue_start">#274d71</color>
+    <color name="dark_blue_end">#2f7ecb</color>
+    <color name="app_blue">#2497fa</color>
+    <color name="white">#ffffff</color>
+</resources>

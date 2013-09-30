@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/white"
+              android:orientation="vertical">
+    <com.arkami.myidkey.common.CustomFontTextView
+            android:id="@+id/titleSelect"
+            style="@style/Roboto"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30sp"
+            android:background="@android:color/white"
+            android:layout_margin="15dp"
+            android:text="Add Item"/>
+
+
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            />
+    <LinearLayout
+            android:id="@+id/plus_menu_popup_new_folder"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:background="@android:color/white"
+            android:layout_gravity="left|center_vertical"
+            android:orientation="horizontal">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:src="@drawable/folder"/>
+
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="New Folder"
+                android:background="@android:color/white"
+                android:textSize="25sp"/>
+    </LinearLayout>
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            />
+    <LinearLayout
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:layout_gravity="left|center_vertical"
+            android:paddingBottom="0dp"
+            android:orientation="horizontal">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:src="@drawable/form_fill"/>
+
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+                android:id="@+id/plus_menu_file"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:text="New File"
+                android:textSize="25sp"
+                android:layout_marginTop="10dp" />
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+        <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                />
+
+    </LinearLayout>
+    <LinearLayout
+            android:id="@+id/plus_menu_popup_new_key_card"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:background="@android:color/white"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:src="@drawable/key_cards"/>
+
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="New Keycard"
+                android:background="@android:color/white"
+                android:textSize="25sp"/>
+    </LinearLayout>
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            />
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@android:color/white"
+            android:weightSum="2">
+        <Button
+                android:id="@+id/plus_keycard_popup_cancel_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:layout_weight="1"
+                android:background="@drawable/button_shape_blue"
+                android:textColor="@color/white"
+                android:layout_margin="5dp"
+                />
+
+
+    </LinearLayout>
+</LinearLayout>

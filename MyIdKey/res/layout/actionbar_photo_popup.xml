@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:color="@android:color/transparent"
+              android:orientation="vertical"
+              android:layout_gravity="left|center_vertical"
+
+        >
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_photo"
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:clickable="false"
+            />
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"/>
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/camera_button"
+                android:padding="5dp"
+                android:layout_gravity="center"/>
+        <Button
+                android:id="@+id/photo_menu_popup_take_photo_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingRight="170dp"
+                android:gravity="left|center_vertical"
+                android:background="@android:color/transparent"
+                android:text="@string/take_photo"/>
+    </LinearLayout>
+
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft= "30dp"
+            android:background="@android:color/darker_gray"/>
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/choose_existing_photo"/>
+    <Button
+            android:id="@+id/photo_menu_popup_choose_existing_photo_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:paddingRight="30dp"
+            android:gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:text="@string/choose_existing"/>
+        </LinearLayout>
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+    <Button
+            android:id="@+id/photo_menu_popup_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_shape_blue"
+            android:text="@string/cancel"
+            android:textColor="@android:color/white"/>
+
+</LinearLayout>

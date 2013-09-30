@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:padding="5dp"
+              android:weightSum="2">
+
+    <com.arkami.myidkey.common.CustomFontTextView
+            style="@style/Roboto"
+            android:id="@+id/custom_component_spinner_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="write name here.."
+            android:layout_weight="1"/>
+
+    <Spinner
+            android:id="@+id/custom_component_spinner_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+</LinearLayout>

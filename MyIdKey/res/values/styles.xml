@@ -1,0 +1,87 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+
+    <style name="ThemeHoloWithActionBar" parent="Theme.Sherlock.Light">
+        <item name="android:actionBarTabStyle">@style/ActionBarTabBarStyle</item>
+        <item name="android:showDividers">none</item>
+        <item name="android:childDivider">@null</item>
+        <item name="android:dividerHorizontal">@null</item>
+        <item name="android:dividerVertical">@null</item>
+        <item name="android:horizontalDivider">@null</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:paddingLeft">0dip</item>
+        <item name="android:paddingRight">0dip</item>
+        <item name="actionBarTabBarStyle">@style/ActionBarTabStyle</item>
+        <item name="android:actionButtonStyle">@style/myIDkeyActionButtonStyle</item>
+    </style>
+
+
+
+    <style name="ActionBarTabStyle" parent="Widget.Sherlock.ActionBar.TabView">
+        <item name="android:showDividers">none</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">0dip</item>
+        <item name="android:paddingRight">0dip</item>
+    </style>
+
+
+
+    <style name="ActionBarTabBarStyle" parent="Widget.Sherlock.ActionBar.TabView">
+        <item name="android:showDividers">none</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">0dip</item>
+        <item name="android:paddingRight">0dip</item>
+        <item name="android:childDivider">@null</item>
+        <item name="android:dividerHorizontal">@null</item>
+        <item name="android:dividerVertical">@null</item>
+        <item name="android:horizontalDivider">@null</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:background">@drawable/tab_indicator</item>
+
+    </style>
+
+    <style name="myIDkeyActionButtonStyle" parent="Widget.Sherlock.Light.ActionButton">
+        <item name="android:minWidth">20dp</item>
+        <item name="android:maxWidth">40dp</item>
+
+    </style>
+
+
+    <declare-styleable name="CustomFontTextView">
+        <attr name="customFont" format="string"/>
+    </declare-styleable>
+
+    <style name="Roboto">
+        <item name="customFont">fonts/Roboto-Regular.ttf</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="myIdKeyEditText">
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">?android:attr/editTextBackground</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMediumInverse</item>
+        <item name="android:textColor">?android:attr/editTextColor</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+
+</resources>

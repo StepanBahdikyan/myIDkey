@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/actionbar_key_kard_photo"
+        android:icon="@android:drawable/ic_menu_camera"
+       />
+    <item
+        android:id="@+id/actionbar_key_kard_audio"
+        android:icon="@android:drawable/stat_sys_phone_call"
+       />
+    <item
+        android:id="@+id/actionbar_key_kard_save"
+        android:title="@string/actionbar_key_card_edit_save"/>
+
+</menu>

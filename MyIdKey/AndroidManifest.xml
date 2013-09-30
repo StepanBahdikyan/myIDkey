@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.arkami.myidkey"
+          android:versionCode="1"
+          android:versionName="1.0">
+
+    <uses-sdk
+            android:minSdkVersion="9"
+            android:targetSdkVersion="16"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <application
+            android:name=".app.MyIdKeyApplication"
+            android:allowBackup="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Sherlock.Light"
+            android:uiOptions="none">
+        <activity
+            android:name="com.arkami.myidkey.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/ThemeHoloWithActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+
+
+        <activity android:name="com.arkami.myidkey.activity.EditFavouritesActivity"
+                  android:windowSoftInputMode="stateHidden|adjustPan">
+        </activity>
+
+        <activity android:name="com.arkami.myidkey.activity.LoginWithStoredPassword"
+                  android:windowSoftInputMode="stateHidden|adjustPan"
+                  android:theme="@style/Theme.Sherlock.Light.NoActionBar">
+        </activity>
+
+        <activity android:name="com.arkami.myidkey.activity.KeyCardEditActivity"
+                  android:windowSoftInputMode="stateHidden">
+
+        </activity>
+        <activity android:name="com.arkami.myidkey.activity.LoginWithPassPhrase"
+                  android:theme="@style/Theme.Sherlock.Light.NoActionBar"
+                  android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity android:name="com.arkami.myidkey.activity.FileChooserActivity"
+                  android:windowSoftInputMode="stateHidden"
+                  android:theme="@android:style/Theme.Holo.Light.Dialog">
+        </activity>
+
+        <activity
+                android:name="com.arkami.myidkey.activity.LoginActivity"
+                android:theme="@style/Theme.Sherlock.Light.NoActionBar"
+                android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity android:name="com.arkami.myidkey.activity.ViewImageIActivity"
+                  android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity android:name="com.arkami.myidkey.activity.EditFavouritesActivity"
+                  android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity
+                android:name="com.arkami.myidkey.activity.WelcomeActivity"
+                android:theme="@style/Theme.Sherlock.Light.NoActionBar"
+                android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

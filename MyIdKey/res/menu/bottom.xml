@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/actionbar_key_cards"
+        android:showAsAction="always|withText"
+        android:title="@string/action_key_kards"/>
+    <item
+        android:id="@+id/actionbar_favourites"
+        android:showAsAction="always|withText"
+        android:title="@string/action_favourites"/>
+    <item
+        android:id="@+id/actionbar_settings"
+        android:showAsAction="always|withText"
+        android:title="@string/action_settings"/>
+
+</menu>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/actionbar_main_submenu_plus"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="visible" >
+
+    <RelativeLayout
+        android:id="@+id/actionbar_main_submenu_plus_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="100" >
+
+        <EditText
+            android:id="@+id/actionbar_main_submenu_plus_edit_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:background="@drawable/edittext_selector"
+            style="@style/Roboto"
+            android:layout_toRightOf="@+id/actionbar_main_submenu_plus_text_view"
+            android:hint="@string/name"
+            android:inputType="textVisiblePassword" />
+
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+            android:id="@+id/actionbar_main_submenu_plus_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/actionbar_main_submenu_plus_edit_text"
+            android:layout_alignBottom="@+id/actionbar_main_submenu_plus_edit_text"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="6dp"
+            android:text="@string/name"
+            android:textSize="15sp" />
+    </RelativeLayout>
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            />
+    <LinearLayout
+        android:id="@+id/actionbar_main_submenu_plus_buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actionbar_main_submenu_plus_input"
+        android:padding="6dp"
+        android:weightSum="100" >
+
+        <Button
+            android:id="@+id/actionbar_main_submenu_plus_button_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginRight="3dp"
+            android:layout_weight="50"
+            android:background="@drawable/button_shape_blue"
+            android:text="@android:string/cancel"
+            android:textColor="@android:color/white" />
+        <ImageView
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:background="@android:color/white"
+                />
+        <Button
+            android:id="@+id/actionbar_main_submenu_plus_button_ok"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="50"
+            android:background="@drawable/button_shape_blue"
+            android:text="@android:string/ok"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

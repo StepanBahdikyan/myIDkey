@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/abs__item_background_holo_light"
+                android:orientation="vertical">
+
+    <com.arkami.myidkey.common.CustomFontTextView
+            style="@style/Roboto"
+            android:id="@+id/record_audio"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:textSize="30sp"
+            android:background="@drawable/abs__item_background_holo_light"
+
+            android:layout_margin="15dp"
+            android:text="@string/record_audio"/>
+
+
+    <ImageView
+            android:id="@+id/title_separator"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/record_audio"
+            android:background="@android:color/darker_gray"
+            />
+    <LinearLayout
+            android:id="@+id/icon_container"
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:layout_below="@+id/title_separator"
+            android:orientation="vertical">
+        <ImageView
+                android:id="@+id/record_icon"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="50dp"
+                android:visibility="visible"
+                android:src="@drawable/microphone"
+                android:background="@drawable/abs__item_background_holo_light"
+                android:layout_below="@+id/title_separator"/>
+
+        <ImageView
+                android:id="@+id/record_pause"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:paddingTop="50dp"
+                android:paddingBottom="10dp"
+                android:src="@drawable/pause"
+                android:visibility="gone"
+                android:background="@drawable/abs__item_background_holo_light"
+                android:layout_below="@+id/title_separator"/>
+
+
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+                android:id="@+id/tap_microphone_to_record"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="15sp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/abs__item_background_holo_dark"
+                android:text="@string/tap_microphone"
+                android:visibility="visible"
+                android:layout_below="@+id/record_icon"/>
+        <ImageView
+                android:id="@+id/wave"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:src="@drawable/wave"
+                android:visibility="gone"
+                android:scaleType="fitCenter"
+                android:background="@drawable/abs__item_background_holo_light"
+                android:layout_below="@+id/record_pause"/>
+    </LinearLayout>
+    <ImageView
+            android:id="@+id/separator"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/icon_container"
+            android:background="@android:color/darker_gray"
+            />
+    <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="fill_parent"
+            android:background="@drawable/abs__item_background_holo_light"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/separator"
+            android:weightSum="2">
+
+
+        <Button
+                android:id="@+id/record_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:background="@drawable/button_shape_blue"
+                android:text="@string/cancel"/>
+        <ImageView
+                android:layout_width="5dp"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/wave"
+                android:background="@android:color/white"
+                />
+        <Button
+                android:id="@+id/done_recording"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:background="@drawable/button_shape_blue"
+                android:layout_weight="1"
+                android:text="@string/done"/>
+    </LinearLayout>
+</RelativeLayout>

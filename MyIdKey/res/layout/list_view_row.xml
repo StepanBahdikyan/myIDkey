@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/section"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:focusable="false"
+        android:visibility="gone" />
+
+    <com.arkami.myidkey.common.CustomFontTextView
+            style="@style/Roboto"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/icon_image"
+        android:layout_toRightOf="@+id/icon_image"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:text="a;slgkas;ldgnas;laskdna;sl"
+            />
+    <com.arkami.myidkey.common.CustomFontTextView
+            style="@style/Roboto"
+            android:id="@+id/tagTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_alignTop="@+id/textView"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_above="@+id/devider"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/button_shape_blue_small"
+            android:textSize="25sp"
+            android:text="blue tag"
+            android:textColor="@android:color/white"
+            android:visibility="invisible"
+            />
+
+    <ImageView
+            android:id="@+id/devider"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:scaleType="fitCenter"
+            android:layout_toRightOf="@+id/icon_image"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/textView"
+            android:background="@android:color/darker_gray"/>
+
+    <ImageView
+        android:id="@+id/icon_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="35dp"
+        android:layout_toRightOf="@+id/checkbox"
+        android:contentDescription="@string/hello_world"
+        android:src="@drawable/ic_launcher" />
+
+</RelativeLayout>

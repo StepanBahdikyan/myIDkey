@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+    <RelativeLayout
+            android:id="@+id/key_card_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="20dp"
+            android:background="@android:drawable/screen_background_light_transparent"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:id="@+id/keyCardName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+
+                android:layout_marginRight="20dp"
+                android:layout_below="@+id/key_card_specific_items_title_layout"
+                android:layout_marginLeft="20dp"
+                android:background="@android:drawable/screen_background_light_transparent"
+                android:layout_marginBottom="20dp">
+
+            <EditText
+                    android:id="@+id/key_card_name_edit_text"
+                    android:layout_width="195dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="85dp"
+                    android:ems="10"
+                    android:focusable="true"
+                    android:hint="@string/name"
+                    android:imeOptions="flagNavigateNext"
+                    android:nextFocusForward="@+id/keyCardTagSpinner"
+                    android:inputType="text"
+                    android:background="@drawable/edittext_selector"
+                    android:nextFocusDown="@+id/keyCardTagSpinner" android:layout_alignParentLeft="true">
+
+            </EditText>
+
+            <com.arkami.myidkey.common.CustomFontTextView
+                    style="@style/Roboto"
+                    android:id="@+id/keyCardNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="@string/keycard"
+                    android:textAppearance="?android:attr/textAppearanceMedium">
+                <requestFocus/>
+            </com.arkami.myidkey.common.CustomFontTextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/keyCardTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/keyCardName"
+                android:layout_below="@+id/keyCardName"
+                android:background="@android:drawable/screen_background_light_transparent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp">
+
+            <com.arkami.myidkey.common.CustomFontTextView
+                    style="@style/Roboto"
+                    android:id="@+id/keyCardTagsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:text="@string/tags"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <LinearLayout
+                    android:id="@+id/key_card_tags_selected"
+                    android:layout_width="173dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/keyCardTagsLabel"
+                    android:layout_marginLeft="87dp"
+                    android:gravity="left"
+                    android:layout_toLeftOf="@+id/keyCardTagSpinner"
+                    android:clipChildren="false"
+                    android:orientation="vertical"
+                    android:background="@android:drawable/screen_background_light_transparent"
+                    android:layout_alignParentLeft="true">
+            </LinearLayout>
+
+            <com.arkami.myidkey.common.CustomFontTextView
+                    style="@style/Roboto"
+                    android:id="@+id/keyCardTagSpinner"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/key_card_tags_selected"
+                    android:background="@color/app_blue"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="1dp"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:text="@string/plus"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@+id/key_card_favourite_button"
+                    android:textColor="@android:color/white"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/keyCardFavourite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/keyCardName"
+                android:layout_below="@+id/keyCardTag"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@android:drawable/screen_background_light_transparent">
+
+            <com.arkami.myidkey.common.CustomFontTextView
+                    style="@style/Roboto"
+                    android:id="@+id/keyCardFavouriteLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/favourite"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <ToggleButton
+                    android:id="@+id/keycard_favorite_toggle"
+                    android:layout_width="68dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:textOff=""
+                    android:textOn=""
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/on_off_selector"
+                    android:layout_toRightOf="@+id/keyCardFavouriteLabel"
+                    android:gravity="center"
+                    android:checked="false"/>
+        </RelativeLayout>
+
+        <ViewStub
+                android:id="@+id/key_card_specific_items"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/keyCardTag"/>
+        <RelativeLayout
+                android:id="@+id/key_card_specific_items_title_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/key_card_holder"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:background="#e5e5e5"
+
+                >
+
+            <com.arkami.myidkey.common.CustomFontTextView
+                    style="@style/Roboto"
+                    android:id="@+id/key_card_specific_items_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="title"
+                    android:textAllCaps="false"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#8b8b8b"
+                    android:background="@android:color/transparent">
+
+            </com.arkami.myidkey.common.CustomFontTextView>
+            <ImageView
+                    android:id="@+id/key_card_type_arrows"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right"
+                    android:scaleType="fitCenter"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/arrows"
+                    />
+        </RelativeLayout>
+        <LinearLayout
+                android:id="@+id/key_card_specific_items_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:animateLayoutChanges="true"
+                android:layout_below="@+id/keyCardTag"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:background="@android:drawable/screen_background_light_transparent">
+        </LinearLayout>
+
+        <RelativeLayout
+                android:id="@+id/key_card_files"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:layout_below="@+id/key_card_specific_items_layout"
+                android:background="@android:drawable/screen_background_light_transparent">
+
+            <RelativeLayout
+                    android:id="@+id/key_card_photos"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                <RelativeLayout
+                        android:id="@+id/key_card_photos_label"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_below="@+id/key_card_photos"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:background="#e5e5e5"
+                        android:visibility="visible">
+                    <com.arkami.myidkey.common.CustomFontTextView
+                            style="@style/Roboto"
+                            android:background="#e5e5e5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/photos"/>
+                </RelativeLayout>
+
+            <LinearLayout
+                    android:id="@+id/key_card_photos_list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/key_card_photos_label"
+                    android:layout_marginTop="3dp"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:orientation="vertical"
+                    android:background="@android:drawable/screen_background_light_transparent">
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/key_card_sounds"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/key_card_photos"
+                android:visibility="gone">
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:id="@+id/key_card_audio_label"
+                    android:background="#e5e5e5">
+                <com.arkami.myidkey.common.CustomFontTextView
+                        style="@style/Roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#e5e5e5"
+                        android:text="@string/audio"/>
+            </RelativeLayout>
+            <LinearLayout
+                    android:id="@+id/key_card_audio_list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/key_card_audio_label"
+                    android:layout_marginTop="3dp"
+
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+
+                    android:orientation="vertical"
+                    android:background="@android:drawable/screen_background_light_transparent">
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <Button
+            android:id="@+id/delete_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape_red"
+            android:text="@string/deleteKeycard"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:layout_below="@+id/key_card_files"
+            android:layout_centerVertical="true"
+            />
+    <View
+            android:id="@+id/space"
+            android:layout_width="fill_parent"
+            android:layout_height="5dp"
+            android:layout_below="@+id/delete_button"
+            android:layout_marginTop="20dp"/>
+
+</RelativeLayout>
+
+        </ScrollView>

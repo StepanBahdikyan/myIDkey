@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="right"
+    android:background="@drawable/abs__item_background_holo_light"
+    android:orientation="horizontal"
+    android:padding="5dp" >
+
+    <Button
+        android:id="@+id/action_bar_settings_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/abs__item_background_holo_light"
+        android:textColor="@color/app_blue"
+        android:text="@string/logout"
+        style="@style/Roboto"
+        android:visibility="visible"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+       />
+
+</RelativeLayout>

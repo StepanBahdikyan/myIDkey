@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/abs__item_background_holo_light"
+                android:orientation="horizontal"
+        android:weightSum="3">
+
+    <Button
+            android:id="@+id/buttonEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/buttonPlus"
+            android:background="@drawable/abs__item_background_holo_light"
+            android:padding="5dp"
+            android:text="@string/edit"
+            android:textColor="@color/app_blue"
+            android:layout_weight="1"/>
+
+    <Button
+            android:id="@+id/buttonPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/abs__item_background_holo_light"
+            android:padding="5dp"
+            android:text="@string/plus"
+            android:textColor="@color/app_blue"
+            android:layout_weight="1"/>
+
+    <com.arkami.myidkey.common.CustomFontTextView
+            style="@style/Roboto"
+            android:id="@+id/inputSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/buttonEdit"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/buttonEdit"
+            android:background="@drawable/abs__item_background_holo_light"
+            android:drawableLeft="@android:drawable/ic_menu_search"
+            android:ems="10"
+
+            android:inputType="textVisiblePassword"
+            android:paddingBottom="0dp"
+            android:paddingLeft="5dp"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_weight="1"/>
+
+</LinearLayout>

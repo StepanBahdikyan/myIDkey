@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+                android:id="@+id/welcome_logo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/shadow_down">
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:background="#f9f9f9">
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:paddingBottom="15dp"
+                        android:paddingTop="15dp"
+                        android:src="@drawable/logo_transparent_blue"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/welcome_buffer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/welcome_logo" >
+        </LinearLayout>
+
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/welcome_buffer"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_marginTop="97dp"
+            android:gravity="center"
+            android:text="@string/welcome"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+            android:id="@+id/you_must"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/welcome_text"
+            android:layout_centerHorizontal="true"
+            android:text="@string/you_must" />
+
+        <Button
+            android:id="@+id/pair_now"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/you_must"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:background="@drawable/button_shape_blue"
+            android:text="@string/pair_now"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           	android:layout_alignParentBottom="true"
+           	android:layout_below="@+id/pair_now"
+            >
+
+        <ImageView
+            android:id="@+id/welcome_devices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pair_now"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="21dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:scaleType="fitCenter"
+            android:layout_above="@+id/welcome_bottombar"
+            android:src="@drawable/pairing1" />
+
+        <LinearLayout
+            android:id="@+id/welcome_bottombar"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/app_blue" >
+        </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

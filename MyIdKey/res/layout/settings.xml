@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <ImageView
+            android:id="@+id/myListViewBackground"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="fitCenter"
+            android:background="@drawable/thumb_background"
+            android:isScrollContainer="true"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            android:paddingLeft="20dp">
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+                android:id="@+id/settings_account_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:paddingBottom="10dp"
+                android:background="@android:color/transparent"
+                android:paddingTop="10dp"
+                android:textSize="25sp"
+                android:text="@string/settings_account_info" />
+
+        <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+                android:id="@+id/settings_sync_with_device"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:paddingBottom="10dp"
+                android:textSize="25sp"
+                android:background="@android:color/transparent"
+                android:paddingTop="10dp"
+                android:text="@string/settings_sync_with_device" />
+        <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+                android:id="@+id/settings_sync_with_cloud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:paddingBottom="10dp"
+                android:textSize="25sp"
+                android:background="@android:color/transparent"
+                android:paddingTop="10dp"
+                android:text="@string/settings_sync_with_cloud" />
+        <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+                android:id="@+id/settings_get_bookmarklet_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:textSize="25sp"
+                android:background="@android:color/transparent"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/settings_get_bookmarklet_code" />
+        <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+                android:id="@+id/settings_import_from_csv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:textSize="25sp"
+                android:background="@android:color/transparent"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/settings_import_keycards_csv" />
+        <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+        <com.arkami.myidkey.common.CustomFontTextView
+                style="@style/Roboto"
+                android:id="@+id/settings_export_csv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:textSize="25sp"
+                android:background="@android:color/transparent"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/settings_export_keycards_csv" />
+        <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+        <com.arkami.myidkey.common.CustomFontTextView
+                android:id="@+id/settings_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:textSize="25sp"
+                android:background="@android:color/transparent"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                style="@style/Roboto"
+                android:text="@string/password_settings"
+                />
+
+        <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@android:color/transparent"
+
+                >
+            <com.arkami.myidkey.common.CustomFontTextView
+                    style="@style/Roboto"
+                    android:id="@+id/logout_on_close_checkBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:text="@string/logout_on_close" />
+            <ToggleButton
+                    android:id="@+id/keycard_favorite_toggle"
+                    android:layout_width="68dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:textOff=""
+                    android:textOn=""
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/on_off_selector"
+                    android:gravity="center"
+                    android:checked="false"/>
+                </LinearLayout>
+
+
+        <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+    </LinearLayout>
+</RelativeLayout>
+
+

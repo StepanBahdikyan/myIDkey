@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/key_card_export_selected_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/selected_stile" />
+
+    <Button
+        android:id="@+id/key_card_export_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email" />
+
+    <Button
+        android:id="@+id/key_card_export_text_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_message" />
+
+    <Button
+        android:id="@+id/key_card_export_copy_to_clipboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/copy_to_clipboard" />
+
+</LinearLayout>
