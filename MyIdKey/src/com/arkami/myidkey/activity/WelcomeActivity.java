@@ -72,7 +72,7 @@ public class WelcomeActivity extends SherlockActivity {
                             protected void onPostExecute(Void result) {
                                 super.onPostExecute(result);
                                 welcomeText.setTextColor(getResources()
-                                        .getColor(color.dark_blue_end));
+                                        .getColor(color.app_blue));
                                 welcomeText.setText(R.string.success);
                                 pairButton.setText(R.string.login);
                                 youMustText.setText(R.string.now_connected);

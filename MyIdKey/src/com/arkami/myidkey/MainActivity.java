@@ -23,6 +23,7 @@ import com.arkami.myidkey.activity.FoldersActivity;
 import com.arkami.myidkey.activity.KeyCardsActivity;
 import com.arkami.myidkey.activity.SettingsActivity;
 import com.arkami.myidkey.listener.MainTabListener;
+import com.arkami.myidkey.view.TabTag;
 
 public class MainActivity extends SherlockFragmentActivity {
 
@@ -32,6 +33,8 @@ public class MainActivity extends SherlockFragmentActivity {
     private static MainTabListener foldersListener;
     private Tab foldersTab;
     public static final String SELECTED_TAB = "selectedTab";
+//    public static final String TAB_ICON_RESOURCE = "tabIconResource";
+    public static final int TAB_KEYCARDS_SELECTED_ID = R.layout.actionbar_tab_keycards;
 
     private Tab keyCardsTab;
 
@@ -51,58 +54,32 @@ public class MainActivity extends SherlockFragmentActivity {
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.abs__item_background_holo_light));
 
         keyCardsTab = actionBar.newTab();
-        //Fragment keyCardsFragment = new KeyCardsActivity();
-
+        keyCardsTab.setTag(new TabTag(R.layout.actionbar_tab_keycards,R.layout.actionbar_tab_selected_not));
         keyCardsTab.setTabListener(
                 new MainTabListener(new KeyCardsActivity(), this));
-        keyCardsTab.setCustomView(R.layout.actionbar_tab_keycards);
-
-//        keyCardsTab.setText(R.string.action_key_kards);
-//		keyCardsTab.setIcon(R.drawable.key_cards);
+        keyCardsTab.setCustomView(R.layout.actionbar_tab_selected_not);
         actionBar.addTab(keyCardsTab);
-
-//        Tab favouritekeyCardsTab = actionBar.newTab();
-//        favouritekeyCardsTab
-//                .setTabListener(new MainTabListener(new FavouritesActivity(), this));
-//
-//
-////		favouritekeyCardsTab.setIcon(R.drawable.favourite_selected);
-//        favouritekeyCardsTab.setCustomView(R.layout.actionbar_tab_favorites);
-//        actionBar.addTab(favouritekeyCardsTab);
 
         foldersTab = actionBar.newTab();
         foldersListener = new MainTabListener(new FoldersActivity(), this);
+        foldersTab.setTag(new TabTag(R.layout.actionbar_tab_folders,R.layout.actionbar_tab_folders_selected_not));
         foldersTab
                 .setTabListener(foldersListener);
         foldersListener.getFragment().onBackPressed();
-
-//		favouritekeyCardsTab.setIcon(R.drawable.favourite_selected);
-        foldersTab.setCustomView(R.layout.actionbar_tab_folders);
+        foldersTab.setCustomView(R.layout.actionbar_tab_folders_selected_not);
         actionBar.addTab(foldersTab);
 
 
         Tab settingsTab = actionBar.newTab();
+        settingsTab.setTag(new TabTag(R.layout.actionbar_tab_settings,R.layout.actionbar_tab_settings_selected_not));
         settingsTab.setTabListener(
                 new MainTabListener(new SettingsActivity(), this));
-        settingsTab.setCustomView(R.layout.actionbar_tab_settings);
+        settingsTab.setCustomView(R.layout.actionbar_tab_settings_selected_not);
 
-//        settingsTab.setIcon(android.R.drawable.ic_lock_lock);
-        // settingsTab.setIcon(R.drawable.favourite_star);
         actionBar.addTab(settingsTab);
-        actionBar.getTabAt(0).setCustomView(new View(this));
         if (getIntent().hasExtra(SELECTED_TAB)) {
             actionBar.selectTab(actionBar.getTabAt(getIntent().getIntExtra(SELECTED_TAB, 0)));
         }
-        // ActionBar actionBar = getActionBar();
-        // actionBar.setDisplayShowTitleEnabled(false);
-        // actionBar.setDisplayUseLogoEnabled(false);
-
-        // Intent pairActivity = new Intent(this, WelcomeActivity.class);
-        // startActivity(pairActivity);
-
-        // actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        // actionBar.setCustomView(R.layout.actionbar_main);
-
     }
 
     @Override
