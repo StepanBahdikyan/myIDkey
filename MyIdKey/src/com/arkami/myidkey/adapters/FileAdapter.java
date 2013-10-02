@@ -137,7 +137,7 @@ public class FileAdapter extends ArrayAdapter<FileObject> {
             case 2:
                 return R.drawable.speaker;
             case 3:
-                return R.drawable.folder;
+                return R.drawable.folder_selected;
             case 4:
                 return R.drawable.form_fill;
             default:

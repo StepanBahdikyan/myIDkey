@@ -27,7 +27,7 @@
         android:layout_toRightOf="@+id/icon_image"
         android:textSize="25sp"
         android:singleLine="true"
-        android:text="a;slgkas;ldgnas;laskdna;sl"
+        android:text="name"
             />
     <com.arkami.myidkey.common.CustomFontTextView
             style="@style/Roboto"
@@ -68,5 +68,21 @@
         android:layout_toRightOf="@+id/checkbox"
         android:contentDescription="@string/hello_world"
         android:src="@drawable/ic_launcher" />
+
+    <com.arkami.myidkey.common.CustomFontTextView
+            style="@style/Roboto"
+            android:id="@+id/expireDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_alignTop="@+id/textView"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_above="@+id/devider"
+            android:layout_marginLeft="5dp"
+            android:textSize="25sp"
+            android:text="blue date text"
+            android:textColor="@color/app_blue"
+            android:visibility="invisible"
+            />
 
 </RelativeLayout>

@@ -39,6 +39,11 @@ public class CSVImporter {
     private int all;
     private int imported;
 
+    //csv mapping next[]
+    private static final int favoriteIndex = 6;
+    private static final int keycardNameIndex = 4;
+    private static final int tagsNodeIndex = 5;
+
     /**
      *
      */
@@ -81,19 +86,19 @@ public class CSVImporter {
                         keyCard.setModifyDate(date);
                         int favorite;
                         try {
-                            favorite = Integer.valueOf(next[6]);
+                            favorite = Integer.valueOf(next[favoriteIndex]);
                             all++;
                         } catch (NumberFormatException e) {
                             //it is the initial line of the csv
                             continue;
                         }
                         keyCard.setFavourite(favorite == 1);
-                        keyCard.setName(next[4]);
+                        keyCard.setName(next[keycardNameIndex]);
                         long keyCardId = keyCardDataSource.insert(keyCard);
                         keyCard.setId(keyCardId);
                         long[] valueIds = null;
 
-                        String[] tags = next[5].split(CSVReader.ITEM_SEPARATOR, 0);
+                        String[] tags = next[tagsNodeIndex].split(CSVReader.ITEM_SEPARATOR, 0);
                         int tagslength = tags.length;
                         for (int i = 0; i < tags.length; i++) {
                             if (tags[i].equals("Secure Notes")) {
@@ -115,63 +120,49 @@ public class CSVImporter {
 
                         if (next[3].contains("NoteType")) {
 
-                            // if ((nameValuePair.length > 1)
-                            // && ((nameValuePair[1].equals(KeyCardTypeEnum.visa
-                            // .getTitle()))
-                            // || (nameValuePair[1]
-                            // .equals(KeyCardTypeEnum.drivers_license
-                            // .getTitle())) || (nameValuePair[1]
-                            // .equals(KeyCardTypeEnum.database
-                            // .getTitle())))){
 
-
+                            KeyCardTypeEnum keyCardType = KeyCardTypeEnum
+                                    .getValueByTitle(nameValuePair[1]);
                             long keyCardTypeID = Cache
                                     .getInstance(context)
-                                    .getKeyCardTypeId(
-                                            KeyCardTypeEnum
-                                                    .getValueByTitle(nameValuePair[1]));
+                                    .getKeyCardTypeId(keyCardType);
+
                             // id = Cache.getInstance(context)
                             // .getKeyCardTypeId(KeyCardTypeEnum.visa)
                             keyCard.setKeyCardTypeId(keyCardTypeID);
-
-
                             valueIds = new long[split.length - 1];
-
                             for (int i = 1; i < split.length; i++) {
+                                String[] valuesNameValuePair = split[i].split(":");
+                                String data = String.valueOf("");
+                                //if has only the name of the value insert a blank one
+                                if (valuesNameValuePair.length == 2) {
+                                    data = valuesNameValuePair[1];
+                                }
 
                                 // XXX
-
-                                String nameString = split[i].split(":")[0];
-
-                                FieldNamesEnum name = FieldNamesEnum
-                                        .getByName(nameString);
-                                Field field = fieldDataSource.get(name.getName());
-                                long fiedId = field.getId();
-
-                                if (name.equals(FieldNamesEnum.DEFAULT)) {
-                                    field = new Field();
+                                //name of the field
+                                String nameString = valuesNameValuePair[0];
+                                Field field = new Field();
+                                //new code
+                                try {
+                                    field = fieldDataSource.get(nameString);
+                                } catch (IllegalAccessException e) {
+                                    //no such type in database
+                                    //inserting the new type
                                     field.setCreateDate(new Date().getTime());
                                     field.setModifyDate(new Date().getTime());
                                     field.setFieldTypeId(2);
                                     field.setName(nameString);
-                                    fiedId = fieldDataSource.insert(field);
-
+                                    field.setId(fieldDataSource.insert(field));
                                 }
                                 try {
-                                    String data = split[i].split(":")[1];
-
                                     Value value = createValue(field, data,
                                             keyCardId, date);
-
                                     valueIds[i - 1] = value.getId();
-
-                                } catch (Exception e) {
+                                } catch (Exception ex) {
                                     continue;
                                 }
-
                             }
-
-
                         } else {
                             //it is a note or a site
 
@@ -255,10 +246,10 @@ public class CSVImporter {
      */
     private Value createValue(Field field, String data, long keyCardId,
                               long date) throws IllegalAccessException {
-        if(field.getFieldTypeId()==3){
+        if (field.getFieldTypeId() == 3) {
             //it is a date string, parse it to our date format!!!
             String formattedDate = Common.format(data);
-            if(formattedDate != null){
+            if (formattedDate != null) {
                 data = formattedDate;
             }
         }
@@ -282,7 +273,7 @@ public class CSVImporter {
      * @return
      */
     @SuppressWarnings("unused")
-	private boolean checkFileStructure(List<String[]> csvData) {
+    private boolean checkFileStructure(List<String[]> csvData) {
         if ((csvData == null) || (csvData.size() < 2)) {
             return false;
         }

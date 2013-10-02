@@ -230,7 +230,7 @@ public class SortedArrayAdapter extends ArrayAdapter<String> {
 		switch (id.intValue()) {
 
 		case 1:
-			return R.drawable.folder;
+			return R.drawable.folder_selected;
 		case 2:
 			return R.drawable.letter;
 		case 3:

@@ -17,13 +17,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
+import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
@@ -93,10 +88,10 @@ public class KeyCardsActivity extends SherlockFragmentOnBackButtonPressed {
     private void initListView(View view, boolean favorite) {
         List<KeyCard> keyCards;
         if (favorite) {
-            keyCards  = Service.getInstance(getSherlockActivity())
+            keyCards = Service.getInstance(getSherlockActivity())
                     .getFavouriteKeyCards();
         } else {
-            keyCards  = Service.getInstance(getSherlockActivity())
+            keyCards = Service.getInstance(getSherlockActivity())
                     .getKeyCards();
         }
         this.adapter = new KeyCardsListAdapter(view.getContext(),
@@ -196,19 +191,19 @@ public class KeyCardsActivity extends SherlockFragmentOnBackButtonPressed {
             public boolean onMenuItemClick(MenuItem item) {
 //                ((MainActivity)KeyCardsActivity.this.getSherlockActivity()).bla(isFavoriteEnabled);
                 isFavoriteEnabled = !isFavoriteEnabled;
-                if(isFavoriteEnabled){
-                	favorites.setIcon(getResources().getDrawable(R.drawable.star_s_selected));
-                }else{
-                	favorites.setIcon(getResources().getDrawable(R.drawable.star_s_selected_not));
+                if (isFavoriteEnabled) {
+                    favorites.setIcon(getResources().getDrawable(R.drawable.star_s_selected));
+                } else {
+                    favorites.setIcon(getResources().getDrawable(R.drawable.star_s_selected_not));
                 }
-                initListView(getView(),isFavoriteEnabled);
+                initListView(getView(), isFavoriteEnabled);
 
                 return false;
             }
         });
         final MenuItem notification = menu.getItem(4);
         final List<KeyCard> expiringKeyCards = keyCardDataSource.getKeyCardsWithExpiringDates();
-        if(expiringKeyCards.size()>0){
+        if (expiringKeyCards.size() > 0) {
             //.setVisibility(View.VISIBLE);
             notification.setVisible(true);
 
@@ -219,12 +214,26 @@ public class KeyCardsActivity extends SherlockFragmentOnBackButtonPressed {
                     final Dialog dialog = new Dialog(getSherlockActivity());
                     dialog.setContentView(R.layout.sortable_list);
                     dialog.setTitle("Expiring Keycards");
-                    ListView expiringKeyCardsListView = (ListView)dialog.findViewById(R.id.myListView);
+                    ListView expiringKeyCardsListView = (ListView) dialog.findViewById(R.id.myListView);
+                    final ArrayAdapter<KeyCard> expiringKeycardsAdapter =
+                            new KeyCardsListAdapter(getSherlockActivity(),
+                                    R.layout.list_view_row, R.id.textView, expiringKeyCards, false);
                     expiringKeyCardsListView.setAdapter(
-                            new KeyCardsListAdapter(getSherlockActivity(), R.layout.list_view_row, R.id.textView, expiringKeyCards, false));
-                    LinearLayout buttonHolder = (LinearLayout)dialog.findViewById(R.id.movingDestinationButtons);
+                            expiringKeycardsAdapter);
+                    expiringKeyCardsListView.setOnItemClickListener(new OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Intent keyCardIntent = new Intent(view.getContext(),
+                                    KeyCardEditActivity.class);
+                            keyCardIntent.putExtra(KeyCardEditActivity.KEY_CARD_ID,
+                                    expiringKeycardsAdapter.getItem(position).getId());
+                            startActivity(keyCardIntent);
+                        }
+                    });
+
+                    LinearLayout buttonHolder = (LinearLayout) dialog.findViewById(R.id.movingDestinationButtons);
                     buttonHolder.setVisibility(View.VISIBLE);
-                    Button snooze = (Button)dialog.findViewById(R.id.movingOkButton);
+                    Button snooze = (Button) dialog.findViewById(R.id.movingOkButton);
                     snooze.setText("Snooze");
                     snooze.setVisibility(View.VISIBLE);
                     snooze.setOnClickListener(new View.OnClickListener() {
@@ -234,7 +243,7 @@ public class KeyCardsActivity extends SherlockFragmentOnBackButtonPressed {
                             dialog.dismiss();
                         }
                     });
-                    Button dismiss = (Button)dialog.findViewById(R.id.movingCancelButton);
+                    Button dismiss = (Button) dialog.findViewById(R.id.movingCancelButton);
                     dismiss.setText("Dismiss");
                     dismiss.setVisibility(View.VISIBLE);
                     dismiss.setOnClickListener(new View.OnClickListener() {
@@ -248,7 +257,7 @@ public class KeyCardsActivity extends SherlockFragmentOnBackButtonPressed {
                     dialog.show();
                     return false;
                 }
-            }) ;
+            });
 
         }
 

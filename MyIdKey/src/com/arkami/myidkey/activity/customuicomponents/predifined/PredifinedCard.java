@@ -41,6 +41,9 @@ public abstract class PredifinedCard {
         return values;
     }
 
+    /**
+     *
+     */
     abstract void setFields();
 
     /**

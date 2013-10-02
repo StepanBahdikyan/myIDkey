@@ -114,13 +114,26 @@
                 />
         <com.arkami.myidkey.common.CustomFontTextView
                 android:id="@+id/key_card_on_long_click_menu_favorite"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:textSize="25sp"
                 style="@style/Roboto"
                 android:text="@string/favourite"
                 />
+        <ToggleButton
+                android:id="@+id/keycard_favorite_toggle"
+                android:layout_width="68dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:textOff=""
+                android:textOn=""
+                android:button="@android:color/transparent"
+                android:background="@drawable/on_off_selector"
+                android:gravity="center"
+                android:checked="false"/>
+
     </LinearLayout>
     <ImageView
             android:layout_width="fill_parent"

@@ -120,6 +120,7 @@ public class KeyCardEditActivity extends SherlockFragmentActivity implements
     private FileDataSource fileDataSource;
     private ValuesDataSource valuesDataSource;
     private TagDataSource tagDataSource;
+    private KeyCardTypesDataSource keyCardTypeDataSource;
     private boolean isInEditMode;
     public static final String KEY_CARD_ID = "keyCardId";
     // private static final String CREDIT_CARD_PHOTO_LIST =
@@ -140,7 +141,7 @@ public class KeyCardEditActivity extends SherlockFragmentActivity implements
         Log.w("onCreate", "called");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.key_card);
-        typeArrows = (ImageView)findViewById(R.id.key_card_type_arrows);
+        typeArrows = (ImageView) findViewById(R.id.key_card_type_arrows);
         if (savedInstanceState != null) {
             photoUri = savedInstanceState.getParcelable("photoUri");
             keyCard = savedInstanceState.getParcelable("keyCard");
@@ -153,6 +154,7 @@ public class KeyCardEditActivity extends SherlockFragmentActivity implements
         this.valuesDataSource = new ValuesDataSource(this);
         this.fileDataSource = new FileDataSource(this);
         this.tagDataSource = new TagDataSource(this);
+        bottom = (LinearLayout) findViewById(R.id.key_card_specific_items_layout);
         long keyCardId = this.getIntent().getLongExtra(KEY_CARD_ID, -1);
         if (keyCardId == -1) {
             keyCard = new KeyCard();
@@ -176,7 +178,7 @@ public class KeyCardEditActivity extends SherlockFragmentActivity implements
         selectedTags = (LinearLayout) findViewById(R.id.key_card_tags_selected);
         initializeTagSpinner();
         // initFavourite();
-        KeyCardTypesDataSource keyCardTypeDataSource = new KeyCardTypesDataSource(
+        keyCardTypeDataSource = new KeyCardTypesDataSource(
                 this);
         keyCardTypeDataSource.open();
         if (keyCard.getKeyCardTypeId() == null) {
@@ -540,29 +542,30 @@ public class KeyCardEditActivity extends SherlockFragmentActivity implements
      */
     private void initializeBottom() {
         // make some magic and show key cards' content
-        bottom = (LinearLayout) findViewById(R.id.key_card_specific_items_layout);
-        if (keyCard.getValueIds() != null) {
-            componentHolder.removeAllViews();
-            for (long valueId : this.keyCard.getValueIds()) {
-                Value value;
-                try {
+        try {
+            if (keyCard.getValueIds() != null) {
+                componentHolder.removeAllViews();
+                for (long valueId : this.keyCard.getValueIds()) {
+                    Value value;
                     value = valuesDataSource.get(valueId);
                     componentHolder.addCustomComponent(new CustomViewComponent(
                             this, value));
-                } catch (IllegalAccessException e) {
-
-                    e.printStackTrace();
                 }
             }
+            bottom.removeAllViews();
+            bottom.addView(this.componentHolder);
+            bottom.invalidate();
+            bottom.requestLayout();
+        } catch (IllegalAccessException e) {
+            initializeCustomBottomScreenAfterSelectionOfAKeyCardType(keyCardTypeDataSource.getTypeById(keyCard
+                    .getKeyCardTypeId()).getName());
+            e.printStackTrace();
         }
-        bottom.removeAllViews();
-        bottom.addView(this.componentHolder);
-        bottom.invalidate();
-        bottom.requestLayout();
+
     }
 
     /**
-     * creates list with audio and vido files.
+     * creates list with audio and video files.
      */
     private void initializeFilesLists() {
         photosListRelativeLayout = (RelativeLayout) findViewById(R.id.key_card_photos);
@@ -656,6 +659,8 @@ public class KeyCardEditActivity extends SherlockFragmentActivity implements
         }
     }
 
+
+
     /**
      *
      */
@@ -664,9 +669,6 @@ public class KeyCardEditActivity extends SherlockFragmentActivity implements
         KeyCardTypeEnum type = KeyCardTypeEnum.getValueByTitle(typeName);
         if (this.componentHolder == null) {
             this.componentHolder = new CustomComponentHolder(this);
-        }
-        if (bottom == null) {
-            initializeBottom();
         }
         KeyCardEditActivity.this.componentHolder.removeAllViews();
         KeyCardEditActivity.this.componentHolder.clear();

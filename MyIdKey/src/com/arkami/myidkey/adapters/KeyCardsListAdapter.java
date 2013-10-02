@@ -108,6 +108,7 @@ public class KeyCardsListAdapter extends ArrayAdapter<KeyCard> {
             view = inflator.inflate(resource, null);
 
             final ViewHolder viewHolder = new ViewHolder();
+            viewHolder.expireDate = (TextView) view.findViewById(R.id.expireDateText);
             viewHolder.keyCardImage = (ImageView) view
                     .findViewById(R.id.icon_image);
             viewHolder.keyCardTagName = (TextView) view.findViewById(R.id.tagTextView);
@@ -162,6 +163,7 @@ public class KeyCardsListAdapter extends ArrayAdapter<KeyCard> {
             }
             viewHolder.keyCardCheckBox.setTag(filterredItems.get(position));
             viewHolder.keyCardName.setTag(filterredItems.get(position));
+            viewHolder.expireDate.setText("some date");
             view.setTag(viewHolder);
 
         } else {
@@ -223,6 +225,7 @@ public class KeyCardsListAdapter extends ArrayAdapter<KeyCard> {
         TextView keyCardName;
         CheckBox keyCardCheckBox;
         TextView keyCardTagName;
+        TextView expireDate;
     }
 
     private class KeyCardsNameFilter extends Filter {

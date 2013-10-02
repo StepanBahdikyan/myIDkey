@@ -187,7 +187,7 @@ public class RealFileAdapter extends ArrayAdapter<File> {
 		if (file.isFile()) {
 			return R.drawable.form_fill;
 		}
-		return R.drawable.folder;
+		return R.drawable.folder_selected;
 		// switch ((int)fileTipe) {
 		// case 1:
 		// return R.drawable.photo;
