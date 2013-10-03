@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Window;
 import com.arkami.myidkey.MainActivity;
 import com.arkami.myidkey.R;
 import com.arkami.myidkey.adapters.FileChooserAdapter;
@@ -52,10 +53,14 @@ public class FileChooserActivity extends SherlockActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		path = new File(getIntent().getStringExtra(PATH));
-
+        requestWindowFeature((int) Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.sortable_list);
+
+        View title = findViewById(R.id.title);
+        title.setVisibility(View.VISIBLE);
+
 		listView = (ListView) findViewById(R.id.myListView);
-		listView.setFastScrollEnabled(true);
+//		listView.setFastScrollEnabled(true);
 		if (getIntent().hasExtra("selected")) {
 			this.setTitle("Select a Destination Folder");
 			filesToMove = getIntent().getStringArrayExtra("selected");

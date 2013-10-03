@@ -52,6 +52,7 @@ public class FileChooserAdapter extends ArrayAdapter<File> {
         ViewHolder holder = (ViewHolder) view.getTag();
         holder.fileName.setText(this.getItem(position).getName());
         if (this.getItem(position).isDirectory()) {
+            holder.fileImage.setVisibility(View.VISIBLE);
             holder.fileImage.setImageResource(R.drawable.folder_selected);
         }else{
             holder.fileImage.setVisibility(View.INVISIBLE);

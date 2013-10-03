@@ -209,7 +209,7 @@ public class Common {
             case 21:
                 return R.drawable.folder_selected;
             default:
-                return R.drawable.key_cards;
+                return R.drawable.keycards;
         }
 
     }

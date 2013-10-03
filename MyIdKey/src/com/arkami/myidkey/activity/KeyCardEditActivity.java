@@ -386,13 +386,16 @@ public class KeyCardEditActivity extends SherlockFragmentActivity implements
 
             @Override
             public void onClick(View v) {
-                final Dialog audioDialog = new RecordAudioDialog(
-                        KeyCardEditActivity.this);
+//                final Dialog audioDialog = new RecordAudioDialog(
+//                        KeyCardEditActivity.this);
                 // audioUri = getContentResolver().
                 // insert(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, new
                 // ContentValues());
                 // ((RecordAudioDialog) audioDialog).setUri(audioUri);
-                audioDialog.show();
+//                audioDialog.show();
+
+                Dialog  soundRecordingActivity = new SoundRecordingActivity(KeyCardEditActivity.this);
+                soundRecordingActivity.show();
             }
         });
         favourite = (ToggleButton) actionBar.getCustomView().findViewById(

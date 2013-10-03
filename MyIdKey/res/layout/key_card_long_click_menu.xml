@@ -61,7 +61,7 @@
         <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/share_icon"
+                android:src="@drawable/share"
                 android:padding="2dp"
                 />
         <com.arkami.myidkey.common.CustomFontTextView
@@ -109,7 +109,7 @@
         <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/star_selected"
+                android:src="@drawable/favorite_star_selected"
                 android:padding="2dp"
                 />
         <com.arkami.myidkey.common.CustomFontTextView

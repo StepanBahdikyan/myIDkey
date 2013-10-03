@@ -32,18 +32,15 @@
     <com.arkami.myidkey.common.CustomFontTextView
             style="@style/Roboto"
             android:id="@+id/tagTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/textView"
-            android:layout_alignTop="@+id/textView"
-            android:layout_toRightOf="@+id/textView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:layout_above="@+id/devider"
-            android:layout_marginLeft="5dp"
+            android:layout_margin="5dp"
             android:background="@drawable/button_shape_blue_small"
             android:textSize="25sp"
             android:text="blue tag"
             android:textColor="@android:color/white"
-            android:visibility="invisible"
+            android:visibility="visible"
             />
 
     <ImageView
@@ -74,10 +71,11 @@
             android:id="@+id/expireDateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/textView"
             android:layout_alignTop="@+id/textView"
             android:layout_toRightOf="@+id/textView"
             android:layout_above="@+id/devider"
+
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="5dp"
             android:textSize="25sp"
             android:text="blue date text"

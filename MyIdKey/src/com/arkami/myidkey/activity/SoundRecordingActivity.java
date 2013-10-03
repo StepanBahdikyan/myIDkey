@@ -16,6 +16,7 @@ import android.provider.MediaStore;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,7 +36,7 @@ public class SoundRecordingActivity extends Dialog {
     private File audiofile = null;
     private static final String TAG = "SoundRecordingActivity";
     private ImageView startButton;
-    private ImageView wave;
+//    private ImageView wave;
     private TextView manual_text;
     private View pauseButton;
     private View cancelButton;
@@ -53,8 +54,9 @@ public class SoundRecordingActivity extends Dialog {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.recording_pop_up);
-        wave = (ImageView) findViewById(R.id.wave);
+//        wave = (ImageView) findViewById(R.id.wave);
         done = (Button) findViewById(R.id.done_recording);
         done.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,8 +105,8 @@ public class SoundRecordingActivity extends Dialog {
 //        startButton.setBackground(getResources().getDrawable(R.drawable.abs__item_background_holo_light));
 //        startButton.setPadding(50,50,50,50);
         cancelButton.setEnabled(true);
-        wave.setVisibility(View.VISIBLE);
-        manual_text.setVisibility(View.GONE);
+//        wave.setVisibility(View.VISIBLE);
+        manual_text.setText("Recording");
         File sampleDir = Environment.getExternalStorageDirectory();
         try {
             audiofile = File.createTempFile("sound", ".3gp", sampleDir);
@@ -126,11 +128,11 @@ public class SoundRecordingActivity extends Dialog {
      * @param view
      */
     public void stopRecording(View view) {
-        startButton.setImageResource(R.drawable.microphone);
+        startButton.setImageResource(R.drawable.record);
 //        startButton.setBackground(context.getResources().getDrawable(R.drawable.abs__item_background_holo_light));
         startButton.setPadding(50, 50, 50, 50);
-        wave.setVisibility(View.GONE);
-        manual_text.setVisibility(View.VISIBLE);
+//        wave.setVisibility(View.GONE);
+        manual_text.setText(R.string.tap_microphone);
         startButton.setEnabled(true);
         cancelButton.setEnabled(false);
         recorder.stop();

@@ -37,9 +37,9 @@
                 android:id="@+id/record_icon"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:padding="50dp"
+                android:padding="10dp"
                 android:visibility="visible"
-                android:src="@drawable/microphone"
+                android:src="@drawable/record"
                 android:background="@drawable/abs__item_background_holo_light"
                 android:layout_below="@+id/title_separator"/>
 
@@ -47,10 +47,7 @@
                 android:id="@+id/record_pause"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="50dp"
-                android:paddingRight="50dp"
-                android:paddingTop="50dp"
-                android:paddingBottom="10dp"
+                android:padding="10dp"
                 android:src="@drawable/pause"
                 android:visibility="gone"
                 android:background="@drawable/abs__item_background_holo_light"
@@ -93,6 +90,7 @@
             android:background="@drawable/abs__item_background_holo_light"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:padding="5dp"
             android:layout_below="@+id/separator"
             android:weightSum="2">
 

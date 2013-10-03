@@ -192,9 +192,9 @@ public class KeyCardsActivity extends SherlockFragmentOnBackButtonPressed {
 //                ((MainActivity)KeyCardsActivity.this.getSherlockActivity()).bla(isFavoriteEnabled);
                 isFavoriteEnabled = !isFavoriteEnabled;
                 if (isFavoriteEnabled) {
-                    favorites.setIcon(getResources().getDrawable(R.drawable.star_s_selected));
+                    favorites.setIcon(getResources().getDrawable(R.drawable.favorite_star_selected));
                 } else {
-                    favorites.setIcon(getResources().getDrawable(R.drawable.star_s_selected_not));
+                    favorites.setIcon(getResources().getDrawable(R.drawable.favorite_star_selected_not));
                 }
                 initListView(getView(), isFavoriteEnabled);
 
